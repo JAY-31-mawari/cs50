@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <form action="/search" method="get">
+        <input  autocomplete="off" autofocus  name="q" required  placeholder="Search here" type="search">
+        <input type="submit" value="Search">
+        <a href="/logout">Logout</a>
+    </form>
+
+    <ul></ul>
+
+    <script>
+        
+        let input=document.querySelector('input');
+        input.addEventListener('input',async function() {
+            let response = await fetch('/search?q=' + input.value);
+            let shows = await response.text();
+            document.querySelector('ul').innerHTML=shows;
+        });
+    </script>
+
+{% endblock %}

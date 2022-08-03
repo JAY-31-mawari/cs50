@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <table>
+        <thead>
+            <tr>
+                <td><b>ID</b></td>
+                <td><b>SHOW</b></td>
+                <td><b>GENRE</b></td>
+                <td><b>YEAR</b></td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for show in shows %}
+            <tr>
+                <td>{{ show["id"] }}</td>
+                <td>{{ show["title"] }}</td>
+                <td>{{ show["genre"] }}</td>
+                <td>{{ show["year"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

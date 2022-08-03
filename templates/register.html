@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <form action="/registrants" method="post">
+        <input autocomplete="off" autofocus name="admin_name" placeholder="Admin_Name" type="text">
+        <input autocomplete="off" autofocus name="admin_password" placeholder="Admin_pass" type="password">
+        <input type="submit" value="Admin_Login">
+    </form>
+
+{% endblock %}
